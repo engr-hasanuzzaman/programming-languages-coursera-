@@ -15,3 +15,21 @@ fun rev_countdown(n: int) =
   if n = 1
   then [1]
   else rev_countdown(n-1) @ [n]
+
+(* return max with options *)
+fun max(l: int list) = 
+  if null l
+  then NONE
+  else 
+      let fun max_in_list(l: int list) =
+            if null(tl l)
+            then hd l
+            else let val max_tail = max_in_list(tl l)
+              in 
+                  if max_tail > hd l
+                  then max_tail
+                  else hd l
+              end
+      in 
+        SOME(max_in_list(l))
+      end
