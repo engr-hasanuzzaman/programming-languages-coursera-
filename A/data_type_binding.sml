@@ -16,3 +16,15 @@ fun evalMyType x =
 val p = evalMyType(Str("sumon"));
 val twoI = evalMyType(TowInts(2,3));
 val str = evalMyType(Pizza);
+
+datatype cData = Constant of int
+                 | Negetion of cData
+                 | Add of cData * cData
+                 | Mul of cData * cData
+fun add_counter x = 
+            case x of
+            Constant c => 0
+            | Add(e1, e2) => 1 + add_counter(e1) + add_counter(e2)
+            | Mul(e1, e2) => add_counter(e1) + add_counter(e2)
+
+(* val a_counter = add_counter(Add(Add(Add(Constant(1), Constant(2)), Constant(3)), Constant(4))); *)
