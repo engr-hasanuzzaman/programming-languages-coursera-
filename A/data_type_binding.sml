@@ -6,3 +6,13 @@ datatype mytype = TowInts of int * int
 val m = TowInts(2, 3);
 val n = Str("Sumon");
 val null = Pizza;
+
+(* output of case expressiong must be same *)
+fun evalMyType x = 
+            case x of
+              Pizza => "This is pizza"
+            | Str s => "Hi " ^ s
+            | TowInts(i1, i2) => "tow sum"
+val p = evalMyType(Str("sumon"));
+val twoI = evalMyType(TowInts(2,3));
+val str = evalMyType(Pizza);
