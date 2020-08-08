@@ -43,3 +43,10 @@ fun number_in_month(dates: (int*int*int) list, month: int): int =
         then 1 + number_in_month(tl dates, month)
         else number_in_month(tl dates, month)
 
+fun number_in_months(dates: (int*int*int) list, months: int list): int =
+    if null dates then 0
+    else 
+        if num_in_list(months, date_to_month(hd dates))
+        then 1 + number_in_months(tl dates, months)
+        else number_in_months(tl dates, months)
+
