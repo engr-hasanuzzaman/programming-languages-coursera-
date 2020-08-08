@@ -26,6 +26,12 @@ fun is_day_of_num_in_month(day_num: int, month: int): bool =
 (* month of date *)
 fun date_to_month(date: int*int*int): int =
     #2 date
+
+fun num_in_list(l: int list, num: int): bool =
+    if null l then false
+    else if hd l = num then true
+    else num_in_list(tl l, num)
+
 (* ------------------ actual solution region --------------- *)
 fun is_older(date1: (int*int*int), date2: (int*int*int)):bool =
     date_to_num_of_day(date1) < date_to_num_of_day(date2)

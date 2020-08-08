@@ -7,6 +7,12 @@ val test = is_day_of_num_in_month(31, 2) = false;
 val test = is_day_of_num_in_month(59, 2) = true;
 val test = is_day_of_num_in_month(33, 1) = false;
 val test = is_day_of_num_in_month(60, 3) = true;
+print("== num_in_list");
+val test = num_in_list([1,2,3,4,5], 1) = true;
+val test = num_in_list([1,2,3,4,5], 5) = true;
+val test = num_in_list([1,2,3,4,5], 3) = true;
+val test = num_in_list([1,2,3,4,5], 0) = false;
+val test = num_in_list([1,2,3,4,5], 6) = false;
 
 print("=========== is_older testing =====================");
 val test1 = is_older((2010, 01, 01), (2020, 10, 19)) = true;
