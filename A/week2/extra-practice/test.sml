@@ -16,3 +16,10 @@ val test1 = is_older((2022, 10, 01), (2021, 10, 19)) = false;
 val test1 = is_older((2020, 10, 01), (2020, 09, 19)) = false;
 val test1 = is_older((2020, 10, 02), (2020, 10, 01)) = false;
 val test1 = is_older((2020, 10, 02), (2020, 10, 02)) = false;
+
+print("========== number_in_month testing =================");
+val input = [(2010, 01, 01), (2010, 02, 01), (2010, 04, 01), (2010, 01, 01), (2010, 01, 01), (2010, 01, 01)];
+val test1 = number_in_month(input, 1) = 4;
+val test1 = number_in_month(input, 2) = 1;
+val test1 = number_in_month(input, 3) = 0;
+val test1 = number_in_month(input, 4) = 1;
