@@ -46,10 +46,7 @@ fun number_in_month(dates: (int*int*int) list, month: int): int =
 
 fun number_in_months(dates: (int*int*int) list, months: int list): int =
     if null dates orelse null months then 0
-    else 
-        if num_in_list(months, date_to_month(hd dates))
-        then 1 + number_in_months(tl dates, months)
-        else number_in_months(tl dates, months)
+    else number_in_month(dates, hd months) + number_in_months(dates, tl months)
 
 fun dates_in_month(dates: (int*int*int) list, month: int): (int*int*int) list =
     if null dates then []
@@ -82,13 +79,8 @@ fun number_before_reaching_sum(sum: int, vals: int list): int =
 
 fun what_month(days: int): int = 
     if days <= 0 then 0
-    else let fun what_month_with_month_days(days: int, days_in_month: int list): int =
-                 if days = 0 orelse null days_in_month then 0
-                 else if days <= hd days_in_month then 1
-                 else 1 + what_month_with_month_days(days - hd days_in_month, tl days_in_month)
-         in
-            what_month_with_month_days(days, days_in_month)
-         end
+    else 1 + number_before_reaching_sum(days, days_in_month)
+
 fun month_range(day1: int, day2: int): int list =
     if day2 < day1 then []
     else what_month(day1) :: month_range(day1+1, day2)
