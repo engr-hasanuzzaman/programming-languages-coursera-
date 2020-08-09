@@ -50,3 +50,9 @@ fun number_in_months(dates: (int*int*int) list, months: int list): int =
         then 1 + number_in_months(tl dates, months)
         else number_in_months(tl dates, months)
 
+fun dates_in_month(dates: (int*int*int) list, month: int): (int*int*int) list =
+    if null dates then []
+    else
+        if date_to_month(hd dates) = month
+        then [hd dates] @ dates_in_month(tl dates, month)
+        else dates_in_month(tl dates, month)
