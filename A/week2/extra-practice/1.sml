@@ -1,5 +1,6 @@
 (* helper funstions *)
 val days_in_month = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 30]
+val month_names = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
 (* return num of days before this month *)
 fun num_of_days_before_month(days_in_month: int list, month: int): int =
@@ -68,4 +69,4 @@ fun get_nth(strs: string list, n: int): string =
         else hd strs
     else 
         if null strs then ""
-        else hd strs
+        else get_nth(tl strs, n-1)
