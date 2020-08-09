@@ -90,3 +90,6 @@ print("========== month_range testing =================");
 val test = month_range(30, 33) = [1,1,2,2]
 val test2 = month_range(59, 61) = [2,3,3]
 val test3 = month_range(89, 91) = [3,3,4]
+
+val input = [(2010, 01, 01), (2010, 02, 01), (2010, 04, 01), (2010, 03, 01), (2010, 04, 01), (2010, 05, 01)];
+val test = oldest(input) = SOME (2010, 01, 01)
