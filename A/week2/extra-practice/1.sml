@@ -82,8 +82,8 @@ fun number_before_reaching_sum(sum: int, vals: int list): int =
 
 fun what_month(days: int): int = 
     if days <= 0 then 0
-    else let fun what_month_with_month_days(days, days_in_month: int list): int =
-                 if days = 0 then 0
+    else let fun what_month_with_month_days(days: int, days_in_month: int list): int =
+                 if days = 0 orelse null days_in_month then 0
                  else if days <= hd days_in_month then 1
                  else 1 + what_month_with_month_days(days - hd days_in_month, tl days_in_month)
          in
