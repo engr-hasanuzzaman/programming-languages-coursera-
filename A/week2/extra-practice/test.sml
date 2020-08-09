@@ -79,3 +79,9 @@ val test = number_before_reaching_sum(10, [1,2,3,4,5]) = 3;
 val test = number_before_reaching_sum(11, [1,2,3,4,5]) = 4;
 val test = number_before_reaching_sum(11, [1,2]) = 2;
 val test = number_before_reaching_sum(0, [1,2]) = 0;
+
+print("========== what_month testing =================");
+val test = what_month(33) = 2;
+val test = what_month(60) = 3;
+val test = what_month(59) = 2;
+val test = what_month(1) = 1;
