@@ -53,3 +53,17 @@ val test1 = dates_in_months(input, [2]) = [(2011, 02, 01)];
 val test1 = dates_in_months(input, [4]) = [(2012, 04, 01)];
 val test1 = dates_in_months(input, [10]) = [];
 val test1 = dates_in_months(input, [1,2,4,12,10]) = [(2010, 01, 01), (2013, 01, 01), (2014, 01, 01), (2015, 01, 01),(2011, 02, 01),(2012, 04, 01)];
+
+print("========== get_nth testing =================");
+val input = ["a", "b", "c", "d", "e", "f", "g", "h", "i"];
+val test = get_nth(input, 1) = "a";
+val test = get_nth(input, 2) = "b";
+val test = get_nth(input, 3) = "c";
+val test = get_nth(input, 4) = "d";
+val test = get_nth(input, 5) = "e";
+val test = get_nth(input, 6) = "f";
+val test = get_nth(input, 7) = "g";
+val test = get_nth(input, 8) = "h";
+val test = get_nth(input, 9) = "i";
+val test = get_nth(input, 10) = "";
+val test = get_nth(input, 100) = "";

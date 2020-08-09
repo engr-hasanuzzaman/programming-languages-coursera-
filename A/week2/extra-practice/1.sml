@@ -60,3 +60,12 @@ fun dates_in_month(dates: (int*int*int) list, month: int): (int*int*int) list =
 fun dates_in_months(dates: (int*int*int) list, months: int list): (int*int*int) list =
     if null dates orelse null months then []
     else dates_in_month(dates, hd months) @ dates_in_months(dates, tl months)
+
+fun get_nth(strs: string list, n: int): string =
+    if n <= 1 
+    then 
+        if null strs then ""
+        else hd strs
+    else 
+        if null strs then ""
+        else hd strs
