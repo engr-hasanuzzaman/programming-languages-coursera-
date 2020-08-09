@@ -71,3 +71,11 @@ val test = get_nth(month_names, 12) = "December";
 print("========== date_to_string testing =================");
 val test = date_to_string((2020, 09, 29)) = "September 29, 2020";
 val test = date_to_string((1989, 1, 31)) = "January 31, 1989";
+
+print("========== number_before_reaching_sum testing =================");
+val test = number_before_reaching_sum(5, [1,2,3,4,5]) = 2;
+val test = number_before_reaching_sum(1, [1,2,3,4,5]) = 0;
+val test = number_before_reaching_sum(10, [1,2,3,4,5]) = 3;
+val test = number_before_reaching_sum(11, [1,2,3,4,5]) = 4;
+val test = number_before_reaching_sum(11, [1,2]) = 2;
+val test = number_before_reaching_sum(0, [1,2]) = 0;

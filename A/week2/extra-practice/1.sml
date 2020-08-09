@@ -73,3 +73,9 @@ fun get_nth(strs: string list, n: int): string =
 
 fun date_to_string(date: (int*int*int)): string =
     get_nth(month_names, date_to_month(date))^ " " ^ Int.toString(#3 date) ^ ", "^ Int.toString(#1 date)
+
+fun number_before_reaching_sum(sum: int, vals: int list): int =
+    if null vals orelse sum <= 0 then 0
+    else 
+        if sum <= hd vals then 0
+        else 1 + number_before_reaching_sum(sum - hd vals, tl vals)
