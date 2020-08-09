@@ -89,3 +89,6 @@ fun what_month(days: int): int =
          in
             what_month_with_month_days(days, days_in_month)
          end
+fun month_range(day1: int, day2: int): int list =
+    if day2 < day1 then []
+    else what_month(day1) :: month_range(day1+1, day2)

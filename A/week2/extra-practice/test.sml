@@ -85,3 +85,8 @@ val test = what_month(33) = 2;
 val test = what_month(60) = 3;
 val test = what_month(59) = 2;
 val test = what_month(1) = 1;
+
+print("========== month_range testing =================");
+val test = month_range(30, 33) = [1,1,2,2]
+val test2 = month_range(59, 61) = [2,3,3]
+val test3 = month_range(89, 91) = [3,3,4]
