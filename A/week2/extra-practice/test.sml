@@ -67,3 +67,7 @@ val test = get_nth(month_names, 9) = "September";
 val test = get_nth(month_names, 10) = "October";
 val test = get_nth(month_names, 11) = "November";
 val test = get_nth(month_names, 12) = "December";
+
+print("========== date_to_string testing =================");
+val test = date_to_string((2020, 09, 29)) = "September 29, 2020";
+val test = date_to_string((1989, 1, 31)) = "January 31, 1989";

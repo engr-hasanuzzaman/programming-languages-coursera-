@@ -70,3 +70,6 @@ fun get_nth(strs: string list, n: int): string =
     else 
         if null strs then ""
         else get_nth(tl strs, n-1)
+
+fun date_to_string(date: (int*int*int)): string =
+    get_nth(month_names, date_to_month(date))^ " " ^ Int.toString(#3 date) ^ ", "^ Int.toString(#1 date)
