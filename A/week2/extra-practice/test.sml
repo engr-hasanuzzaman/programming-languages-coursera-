@@ -46,3 +46,10 @@ val test1 = dates_in_month(input, 1) = [(2010, 01, 01), (2013, 01, 01), (2014, 0
 val test1 = dates_in_month(input, 2) = [(2011, 02, 01)];
 val test1 = dates_in_month(input, 4) = [(2012, 04, 01)];
 val test1 = dates_in_month(input, 10) = [];
+
+print("========== dates_in_months testing =================");
+val test1 = dates_in_months(input, [1]) = [(2010, 01, 01), (2013, 01, 01), (2014, 01, 01), (2015, 01, 01)];
+val test1 = dates_in_months(input, [2]) = [(2011, 02, 01)];
+val test1 = dates_in_months(input, [4]) = [(2012, 04, 01)];
+val test1 = dates_in_months(input, [10]) = [];
+val test1 = dates_in_months(input, [1,2,4,12,10]) = [(2010, 01, 01), (2013, 01, 01), (2014, 01, 01), (2015, 01, 01),(2011, 02, 01),(2012, 04, 01)];

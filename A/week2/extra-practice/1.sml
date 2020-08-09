@@ -44,7 +44,7 @@ fun number_in_month(dates: (int*int*int) list, month: int): int =
         else number_in_month(tl dates, month)
 
 fun number_in_months(dates: (int*int*int) list, months: int list): int =
-    if null dates then 0
+    if null dates orelse null months then 0
     else 
         if num_in_list(months, date_to_month(hd dates))
         then 1 + number_in_months(tl dates, months)
@@ -56,3 +56,7 @@ fun dates_in_month(dates: (int*int*int) list, month: int): (int*int*int) list =
         if date_to_month(hd dates) = month
         then hd dates :: dates_in_month(tl dates, month)
         else dates_in_month(tl dates, month)
+
+fun dates_in_months(dates: (int*int*int) list, months: int list): (int*int*int) list =
+    if null dates orelse null months then []
+    else dates_in_month(dates, hd months) @ dates_in_months(dates, tl months)
