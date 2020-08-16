@@ -15,3 +15,6 @@ fun length l =
   case l of 
   nil => 0
   | _::xs => 1 + (length xs)
+
+(* val declaretion also pattern matching *)
+val (x, y, z) = (1,2,3)
