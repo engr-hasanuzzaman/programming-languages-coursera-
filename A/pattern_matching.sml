@@ -40,3 +40,6 @@ fun append([], ys) = ys
 (* exception handling *)
 (* hanld exception, so it will contain [] *)
 val it = zip3([1], [1,2], []) handle NotEqualLength => []
+
+(* exception that take params *)
+exception CustomException of int * int (* take two int params, raise CusotomException(2,3) *)
