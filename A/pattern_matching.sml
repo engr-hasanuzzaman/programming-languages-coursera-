@@ -25,5 +25,14 @@ exception NotEqualLength
 fun zip3(lists) = 
   case lists of 
   ([],[],[]) => []
-  | (h1::t1, h2::t2, h3::t3) => (h1, h2, h3)::zip(t1, t2, t3)
+  | (h1::t1, h2::t2, h3::t3) => (h1, h2, h3)::zip3(t1, t2, t3)
   | _ => raise NotEqualLength
+
+(* N.B: Notice, in function pattern = is used instead of => *)
+(* length using function pattern *)
+fun f_length nil = 0
+  | f_length(h::t) = 1 + f_length(t)
+
+(* function patter for append *)
+fun append([], ys) = ys
+  | append(x::xs, ys) = x :: append(xs, ys)
