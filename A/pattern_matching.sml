@@ -36,3 +36,7 @@ fun f_length nil = 0
 (* function patter for append *)
 fun append([], ys) = ys
   | append(x::xs, ys) = x :: append(xs, ys)
+
+(* exception handling *)
+(* hanld exception, so it will contain [] *)
+val it = zip3([1], [1,2], []) handle NotEqualLength => []
