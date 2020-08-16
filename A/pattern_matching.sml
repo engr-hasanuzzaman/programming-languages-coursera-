@@ -9,3 +9,9 @@ fun p_reverse(l: int list): int list =
     case l of 
         [] => []
       | x::xs => p_reverse(xs)@[x]
+
+(* lins size *)
+fun length l =
+  case l of 
+  nil => 0
+  | _::xs => 1 + (length xs)
