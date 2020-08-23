@@ -25,6 +25,19 @@ fun get_substitutions1(list, target) =
                     NONE => get_substitutions1(tl, target)
                 | SOME elm => elm @ get_substitutions1(tl, target)
 
+fun get_substitutions2(list, target) =
+    let fun substitue(list, target, acc) =
+                case list of
+                    [] => acc
+                | hd::tl => case all_except_option(target, hd) of
+                                NONE => substitue(tl, target, acc)
+                            | SOME elm => substitue(tl, target, acc@elm)
+
+    in
+        substitue(list, target, [])
+    end
+
+
 (* [["a", "b", "c", "x"], ["d", "e", "f", "c"], ["z"], ["x", "c"]], "c" *)
 (* put your solutions for problem 1 here *)
 
