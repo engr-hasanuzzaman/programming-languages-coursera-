@@ -17,7 +17,14 @@ fun all_except_option(target, l) =
                         NONE => NONE
                     | SOME tl => SOME(hd::tl)
 
-
+(* get_substitutions1 *)
+fun get_substitutions1(list, target) =
+    case list of
+        [] => []
+    | hd::tl => case all_except_option(target, hd) of
+                    NONE => get_substitutions1(tl, target)
+                | SOME elm => elm @ get_substitutions1(tl, target)
+(* [["a", "b", "c", "x"], ["d", "e", "f", "c"], ["z"], ["x", "c"]], "c" *)
 (* put your solutions for problem 1 here *)
 
 (* you may assume that Num is always used with values 2, 3, ..., 10
