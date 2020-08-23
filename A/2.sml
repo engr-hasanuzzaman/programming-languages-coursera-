@@ -11,7 +11,7 @@ fun same_string(s1 : string, s2 : string) =
 fun all_except_option(target, l) = 
     case l of
         [] => NONE
-    | hd::tl => if target = hd then SOME tl
+    | hd::tl => if same_string(hd, target) then SOME tl
                 else
                     case all_except_option(target, tl) of
                         NONE => NONE
@@ -24,6 +24,7 @@ fun get_substitutions1(list, target) =
     | hd::tl => case all_except_option(target, hd) of
                     NONE => get_substitutions1(tl, target)
                 | SOME elm => elm @ get_substitutions1(tl, target)
+
 (* [["a", "b", "c", "x"], ["d", "e", "f", "c"], ["z"], ["x", "c"]], "c" *)
 (* put your solutions for problem 1 here *)
 
