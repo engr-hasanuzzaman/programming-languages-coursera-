@@ -15,3 +15,8 @@ val list = [1,2,3,4,5,6,7,8]
 fun map([]) = []
     | map(hd::tl) = if even(hd) then hd::map(tl)
                     else map(tl)
+
+fun select(f, []) = (_, []) = []
+    | select(hd::tl) = if f(hd) then hd::select(f, tl)
+                        else select(f, tl)
+
