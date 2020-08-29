@@ -22,4 +22,17 @@ fun select(f, l) =
     | hd::tl => if f(hd) then hd::select(f, tl)
                         else select(f, tl)
 
+datatype exp = Constant of int
+               | Negate of exp
+               | Add of exp * exp
+               | Mul of exp * exp
 
+(* let d = Mul(Add(Nega)) *)
+fun iter(f, e) =
+    case e of 
+        Constant i => f i
+    | Negate e => iter(f, e)
+    | Add(e1, e2) => iter(f, e1) andalso iter(f, e2)
+    | Mul(e1, e2) => iter(f, e1) andalso iter(f, e2) 
+  
+val d = Mul(Add(Constant(1), Constant(2)), Add(Mul(Constant 4, Negate(Constant 2)), Constant 12));
