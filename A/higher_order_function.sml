@@ -8,3 +8,10 @@ val t = n_times(tl, 3, [1,2,3,4,5]) (* will return [4,5], here tl is array tail 
 
 (* annonimous function *)
 val tt = n_times((fn n => n + n), 3, 10) = 80
+
+fun even n = n mod 2 = 0
+
+val list = [1,2,3,4,5,6,7,8]
+fun map([]) = []
+    | map(hd::tl) = if even(hd) then hd::map(tl)
+                    else map(tl)
