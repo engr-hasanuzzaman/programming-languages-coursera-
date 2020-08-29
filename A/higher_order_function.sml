@@ -16,7 +16,10 @@ fun map([]) = []
     | map(hd::tl) = if even(hd) then hd::map(tl)
                     else map(tl)
 
-fun select(f, []) = (_, []) = []
-    | select(hd::tl) = if f(hd) then hd::select(f, tl)
+fun select(f, l) = 
+    case l of 
+        [] => []
+    | hd::tl => if f(hd) then hd::select(f, tl)
                         else select(f, tl)
+
 
