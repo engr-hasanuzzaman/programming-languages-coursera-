@@ -15,3 +15,15 @@ fun fold f acc l =
 fun sum (x, y) = x+y;
 fold (fn (x,y)=>x*y) 1 [2,3,4] = 24;
 fold sum 0 [1,2,3,4,5] = 15;
+
+(* range 1,5 [1,2,3,4,5] *)
+fun range(x, y) =
+    if x > y then []
+    else x::range(x+1, y)
+
+(* range with currying *)
+(* make non-curry function to curry function *)
+fun carry f x y = f (x, y)
+val range_currying = carry range
+val one_to_up = range_currying 1
+val it = one_to_up 10
