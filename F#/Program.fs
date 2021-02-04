@@ -2,6 +2,11 @@
 
 open System
 
+let do_functs =
+    let sum(a: int, b: int): int = a + b
+    printf "the sum of 5 and 12 is %i" (sum(5, 12))
+
+        
 let introduce() =
     printf "What is your name?"
     let name = Console.ReadLine()
@@ -11,6 +16,7 @@ let introduce() =
 
 [<EntryPoint>]
 let main argv =
-    introduce()
+    // introduce()
+    do_functs
     Console.ReadKey() |> ignore
     0 // return an integer exit code
