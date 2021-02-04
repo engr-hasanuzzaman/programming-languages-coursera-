@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "zCfJxjzfEozB6dbFC2DN/dMyYa1mdmEFl8c0BBnVUmhYWnA19hk5hTadocdnjmmHoPoAXtP80S0Sh9PEDYp5QA==",
+  "success": true,
+  "projectFilePath": "F:\\projects\\programming-languages-coursera-\\F#\\F#.fsproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Lenovo\\.nuget\\packages\\fsharp.core\\5.0.0\\fsharp.core.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
