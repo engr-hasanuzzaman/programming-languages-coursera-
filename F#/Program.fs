@@ -8,6 +8,11 @@ let do_functs() =
 
 let rec factorial n = if n <= 1 then 1 else n * factorial(n - 1)
 
+let map_func() =
+    let list = [2;3;4;5;6]
+    let double_list = List.map(fun x -> x * 2) list
+    printf "double_list is %A" double_list
+
 let introduce() =
     printf "What is your name?"
     let name = Console.ReadLine()
@@ -19,6 +24,7 @@ let introduce() =
 let main argv =
     // introduce()
     // do_functs
-    printf "factorial of 5 is %i " (factorial 5)
+    // printf "factorial of 5 is %i " (factorial 5)
+    map_func()
     Console.ReadKey() |> ignore
     0 // return an integer exit code
