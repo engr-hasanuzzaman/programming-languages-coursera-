@@ -13,6 +13,14 @@ let map_func() =
     let double_list = List.map(fun x -> x * 2) list
     printf "double_list is %A" double_list
 
+let mutatation() =
+    let mutable will_be_changed = "hi"
+    will_be_changed <- "hello"
+    printfn "the new value of old hi is %s" will_be_changed 
+    let a = ref 10
+    a := 200
+    printfn "the new value of old 10 is %i" ! a 
+
 let introduce() =
     printf "What is your name?"
     let name = Console.ReadLine()
@@ -25,6 +33,7 @@ let main argv =
     // introduce()
     // do_functs
     // printf "factorial of 5 is %i " (factorial 5)
-    map_func()
+    // map_func()
+    mutatation()
     Console.ReadKey() |> ignore
     0 // return an integer exit code
