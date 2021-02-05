@@ -21,6 +21,9 @@ let mutatation() =
     a := 200
     printfn "the new value of old 10 is %i" ! a 
 
+let multiply list a =
+    List.map(fun n -> n * a) list
+
 let introduce() =
     printf "What is your name?"
     let name = Console.ReadLine()
@@ -34,6 +37,14 @@ let main argv =
     // do_functs
     // printf "factorial of 5 is %i " (factorial 5)
     // map_func()
-    mutatation()
+    // mutatation()
+    let res = multiply [1;2;3;4] 5
+    printfn "the out put is %A" res
+    // let input = [
+    [1;2;3;4;5;6;7;8;9;10]
+    |> List.filter(fun e -> (e % 2) = 0)
+    |> List.map(fun e -> e * 2)
+    |> printfn "Final list is %A"
+    // printfn "even number ins %A" (List.filter(fun x -> x % 2 = 0))
     Console.ReadKey() |> ignore
     0 // return an integer exit code
