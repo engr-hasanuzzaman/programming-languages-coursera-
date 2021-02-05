@@ -46,5 +46,15 @@ let main argv =
     |> List.map(fun e -> e * 2)
     |> printfn "Final list is %A"
     // printfn "even number ins %A" (List.filter(fun x -> x % 2 = 0))
+
+    // function composition 
+    let mul_num x = x * 3
+    let add_num  y = y + 3
+    // printfn "final value is %i"  mul_num 2 |> add_num
+    let mul_add = mul_num >> add_num
+    let add_mul = mul_num << add_num
+    printfn "mul_add of 3 is %i" (mul_add 3)
+    printfn "add_mul of 3 is %i" (add_mul 3)
+
     Console.ReadKey() |> ignore
     0 // return an integer exit code
