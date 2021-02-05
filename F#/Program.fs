@@ -31,30 +31,16 @@ let introduce() =
     let age = Console.ReadLine()
     printf "Oh you are %s and you are %s years old" name age
 
-[<EntryPoint>]
-let main argv =
-    // introduce()
-    // do_functs
-    // printf "factorial of 5 is %i " (factorial 5)
-    // map_func()
-    // mutatation()
-    let res = multiply [1;2;3;4] 5
-    printfn "the out put is %A" res
-    // let input = [
-    [1;2;3;4;5;6;7;8;9;10]
-    |> List.filter(fun e -> (e % 2) = 0)
-    |> List.map(fun e -> e * 2)
-    |> printfn "Final list is %A"
-    // printfn "even number ins %A" (List.filter(fun x -> x % 2 = 0))
+let string_stuff() = 
+    let str1 = "random straing"
+    let str2 = @"ignore backslashes"
+    let str3 = """ "double quation will be ignored" """
+    let str4 = str1 + " " + str2
+    printfn "length of str is %i" (String.length(str4))
+    printfn "char %c" str1.[1]
+    printfn "range operatio %s" (str1.[0..3])
 
-    // function composition 
-    let mul_num x = x * 3
-    let add_num  y = y + 3
-    // printfn "final value is %i"  mul_num 2 |> add_num
-    let mul_add = mul_num >> add_num
-    let add_mul = mul_num << add_num
-    printfn "mul_add of 3 is %i" (mul_add 3)
-    printfn "add_mul of 3 is %i" (add_mul 3)
+let math_stuffs() = 
     let i = 10
     printf "float %f" (float i)
     printf "integer casting %i" (int 2.345)
@@ -65,6 +51,36 @@ let main argv =
     printf "Abs of -23 is %i" (abs -23)
     printf "floor of 2.3 is %f" (floor 2.3)
     printf "ceil of 2.3 %f" (ceil 1.4)
-    // printf "A float is %f" (float 1)
+    printf "A float is %f" (float 1)
+
+let function_composition() = 
+    // // function composition 
+    let mul_num x = x * 3
+    let add_num  y = y + 3
+    // printfn "final value is %i"  mul_num 2 |> add_num
+    let mul_add = mul_num >> add_num
+    let add_mul = mul_num << add_num
+    printfn "mul_add of 3 is %i" (mul_add 3)
+    printfn "add_mul of 3 is %i" (add_mul 3)
+
+[<EntryPoint>]
+let main argv =
+    // introduce()
+    // do_functs
+    // printf "factorial of 5 is %i " (factorial 5)
+    // map_func()
+    // mutatation()
+    // let res = multiply [1;2;3;4] 5
+    // printfn "the out put is %A" res
+    // // let input = [
+    // [1;2;3;4;5;6;7;8;9;10]
+    // |> List.filter(fun e -> (e % 2) = 0)
+    // |> List.map(fun e -> e * 2)
+    // |> printfn "Final list is %A"
+    // // printfn "even number ins %A" (List.filter(fun x -> x % 2 = 0))
+
+    
+    
+    string_stuff()
     Console.ReadKey() |> ignore
     0 // return an integer exit code
