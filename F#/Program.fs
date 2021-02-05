@@ -55,6 +55,16 @@ let main argv =
     let add_mul = mul_num << add_num
     printfn "mul_add of 3 is %i" (mul_add 3)
     printfn "add_mul of 3 is %i" (add_mul 3)
+    let i = 10
+    printf "float %f" (float i)
+    printf "integer casting %i" (int 2.345)
+    printf "type of 5 is %A" (i.GetType())
 
+    // math function
+    printf "A float is %f" (float 1)
+    printf "Abs of -23 is %i" (abs -23)
+    printf "floor of 2.3 is %f" (floor 2.3)
+    printf "ceil of 2.3 %f" (ceil 1.4)
+    // printf "A float is %f" (float 1)
     Console.ReadKey() |> ignore
     0 // return an integer exit code
