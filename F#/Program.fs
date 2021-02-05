@@ -78,9 +78,12 @@ let main argv =
     // |> List.map(fun e -> e * 2)
     // |> printfn "Final list is %A"
     // // printfn "even number ins %A" (List.filter(fun x -> x % 2 = 0))
+    "common"
+    |> String.collect(fun c -> sprintf "%c, " c) 
+    |> printfn "%s"
+    // string_stuff()
+    printfn "is uppercase %b" (String.exists(fun c -> Char.IsUpper(c)) "Thisis test")
+    printfn "is uppercase %b" (String.exists(fun c -> Char.IsUpper(c)) "thisis test")
 
-    
-    
-    string_stuff()
     Console.ReadKey() |> ignore
     0 // return an integer exit code
