@@ -105,6 +105,16 @@ let conditional_stuff() =
         | age when ((age  > 5) && (age <= 18)) -> (age - 5).ToString()
         | _ -> "Colleage"
     printfn "Grade2 is : %s" grade2
+let list_staff() = 
+    let list1 = [1;2;3;4]
+    list1 |> List.iter (printf "%i")
+    let list2 = [1..5]
+    printfn "list2 is %A" list2
+    let list3 = 5::6::7::[]
+    printfn "list3 %A" list3
+    let list4 = ['a'..'z']
+    printfn "list4 %A" list4
+
 [<EntryPoint>]
 let main argv =
     // introduce()
@@ -125,6 +135,7 @@ let main argv =
     |> printfn "%s"
     // string_stuff()
     // loop_stuff()
-    conditional_stuff()
+    // conditional_stuff()
+    list_staff()
     Console.ReadKey() |> ignore
     0 // return an integer exit code
