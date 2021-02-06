@@ -195,9 +195,11 @@ let map_stuff() =
     
     if Map.containsKey "salma" customer then
         printfn "salma exist"
+    if customer.ContainsKey "sumon" then printfn "sumon exist"
     let c2 = Map.remove "salma" customer
     printfn "new map size is %i" c2.Count
     printfn "map is %A" c2
+    printfn "%i" c2.["sumon"]
     // printfn "the samle "
 
 [<EntryPoint>]
