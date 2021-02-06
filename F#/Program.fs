@@ -124,6 +124,14 @@ let list_staff() =
     printfn "list7 %A" list7
     printfn "list8 %A" list8
 
+    printfn "Head of list2 %i" list2.Head
+    printfn "Tail of list2 %A" list2.Tail
+    List.fold(fun sum e -> sum + e) 0 [1;2;3] |> printfn "sum is %i"
+    printfn "soft of [2;5;1;3;] is %A" (List.sort [2;5;1;3;])
+    printfn "only odd is %A" (List.filter(fun e -> e % 2 = 1) [1..20])
+    printfn "is empty %b" (list1.IsEmpty)
+    printfn "is empty %i" ([1..5].Item(1))
+
 
 [<EntryPoint>]
 let main argv =
