@@ -145,7 +145,17 @@ let enum_stuff() =
     | _ -> printfn "do not know"
 
 let option_stuff() =
-
+    let divide x y = 
+        match y with
+        | 0 -> None
+        | _ -> Some(x/y)
+    if (divide 5 0).IsSome then 
+        printfn "5 0 is value is %A" (divide  5 0).Value
+    elif (divide 5 0 ).IsNone then 
+        printfn "none"
+    else
+        printfn "somthing happend"
+    
 [<EntryPoint>]
 let main argv =
     // introduce()
@@ -168,6 +178,7 @@ let main argv =
     // loop_stuff()
     // conditional_stuff()
     // list_staff()
-    enum_stuff()
+    // enum_stuff()
+    option_stuff()
     Console.ReadKey() |> ignore
     0 // return an integer exit code
