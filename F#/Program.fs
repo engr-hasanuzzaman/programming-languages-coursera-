@@ -220,6 +220,29 @@ let struc_stuff() =
         r.length * r.width
     let a = new Rectangle(4, 5)
     printfn "area is %i" (area a)
+
+type Animal = class
+    val name: string
+    val age: float
+    val height: float
+
+    new (name, age, heigh) = 
+        { name = name; age = age; height = heigh }
+    member x.Run = 
+      printfn "%s can run" x.name
+end
+
+type Dog(name, age, height) =
+    inherit Animal(name, age, height)
+
+    member x.Bark = 
+        printfn "%s can bark" x.name
+let class_stuff() = 
+    let foo = new Animal("foo", 2.5, 4.0)
+    let kalu = new Dog("kalu", 2.0, 4.0)
+    kalu.Bark
+    foo.Run
+    kalu.Run
 [<EntryPoint>]
 let main argv =
     // introduce()
@@ -250,6 +273,7 @@ let main argv =
     // map_stuff()
     // generic_stuff()
     // exception_handling()
-    struc_stuff()
+    // struc_stuff()
+    class_stuff()
     Console.ReadKey() |> ignore
     0 // return an integer exit code
