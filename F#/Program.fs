@@ -155,7 +155,15 @@ let option_stuff() =
         printfn "none"
     else
         printfn "somthing happend"
-    
+let tuple_stuff() =
+    let avg  (a,b,c): float =
+        let sum = a + b + c
+        sum / 3.0
+    printfn "avg is %f" (avg (1.0, 2.0,3.0))
+    let my_data = ("sumon", 31, 1)
+    let (name, age, _) = my_data
+    printfn "name is %s, age is %i" name age
+
 [<EntryPoint>]
 let main argv =
     // introduce()
@@ -179,6 +187,7 @@ let main argv =
     // conditional_stuff()
     // list_staff()
     // enum_stuff()
-    option_stuff()
+    // option_stuff()
+    tuple_stuff()
     Console.ReadKey() |> ignore
     0 // return an integer exit code
