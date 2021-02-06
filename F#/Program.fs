@@ -186,12 +186,18 @@ let map_stuff() =
     let customer =
         Map.empty
            .Add("sumon", 200)
-           .Add("salam", 300)
+           .Add("salma", 300)
     printfn "number of customers %i" customer.Count
     let s = customer.TryFind "salma"
     match s with
     | Some x -> printfn "salma %i " x
     | None -> printfn "not found"
+    
+    if Map.containsKey "salma" customer then
+        printfn "salma exist"
+    let c2 = Map.remove "salma" customer
+    printfn "new map size is %i" c2.Count
+    printfn "map is %A" c2
     // printfn "the samle "
 
 [<EntryPoint>]
