@@ -97,6 +97,14 @@ let conditional_stuff() =
         printfn "grade is %i" grade
     else
         printfn "other"
+
+    let grade2: string = 
+        match age with
+        | age when age < 5 -> "Preschool"
+        | 5 -> "kindergarden"
+        | age when ((age  > 5) && (age <= 18)) -> (age - 5).ToString()
+        | _ -> "Colleage"
+    printfn "Grade2 is : %s" grade2
 [<EntryPoint>]
 let main argv =
     // introduce()
