@@ -164,6 +164,11 @@ let tuple_stuff() =
     let (name, age, _) = my_data
     printfn "name is %s, age is %i" name age
 
+type Customer = 
+    { name: string; balance: float }
+let record_stuff() = 
+    let bob: Customer = {name = "bob";  balance = 234.0}
+    printfn "bob is %A" bob
 [<EntryPoint>]
 let main argv =
     // introduce()
@@ -188,6 +193,7 @@ let main argv =
     // list_staff()
     // enum_stuff()
     // option_stuff()
-    tuple_stuff()
+    // tuple_stuff()
+    record_stuff()
     Console.ReadKey() |> ignore
     0 // return an integer exit code
