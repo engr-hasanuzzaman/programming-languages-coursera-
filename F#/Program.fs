@@ -182,6 +182,17 @@ let seq_stuff() =
         check 2
     printfn "5 is prime %b" (is_prime 5)
     seq { for i in 1..500 do if (is_prime i) then yield i} |> printfn "%A"
+let map_stuff() = 
+    let customer =
+        Map.empty
+           .Add("sumon", 200)
+           .Add("salam", 300)
+    printfn "number of customers %i" customer.Count
+    let s = customer.TryFind "salma"
+    match s with
+    | Some x -> printfn "salma %i " x
+    | None -> printfn "not found"
+    // printfn "the samle "
 
 [<EntryPoint>]
 let main argv =
@@ -209,6 +220,7 @@ let main argv =
     // option_stuff()
     // tuple_stuff()
     // record_stuff()
-    seq_stuff()
+    // seq_stuff()
+    map_stuff()
     Console.ReadKey() |> ignore
     0 // return an integer exit code
