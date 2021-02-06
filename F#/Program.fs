@@ -39,6 +39,29 @@ let string_stuff() =
     printfn "length of str is %i" (String.length(str4))
     printfn "char %c" str1.[1]
     printfn "range operatio %s" (str1.[0..3])
+    printfn "is uppercase %b" (String.exists(fun c -> Char.IsUpper(c)) "Thisis test")
+    printfn "is uppercase %b" (String.exists(fun c -> Char.IsUpper(c)) "thisis test")
+    printfn "12333434
+    
+    is all the digit %b" (String.forall(fun c -> Char.IsDigit(c)) "12333434")
+    printfn "is all the digit %b" (String.forall(fun c -> Char.IsDigit(c)) "12333434")
+    printfn "%s" (String.init 10 (fun i -> i.ToString()))
+    "test"
+    |> String.iter(fun c -> printfn "%c" c)
+ 
+let loop_stuff() =
+    let magic = "7"
+    let mutable guess = ""
+    while not (magic.Equals(guess)) do
+        printfn "guess a number"
+        guess <- Console.ReadLine()
+    printfn "you number is %s"  guess
+    
+    for i = 1 to 10 do
+       printf "%i" i
+    [1..10]
+    |> List.reduce(+)
+    |> printfn "sum is %i"
 
 let math_stuffs() = 
     let i = 10
@@ -63,6 +86,17 @@ let function_composition() =
     printfn "mul_add of 3 is %i" (mul_add 3)
     printfn "add_mul of 3 is %i" (add_mul 3)
 
+let conditional_stuff() = 
+    let age = 8
+    if age < 5 then
+        printfn "small"
+    elif age = 5 then 
+        printfn "age is 5"
+    elif (age > 5) && (age <= 18) then
+        let grade = age - 5
+        printfn "grade is %i" grade
+    else
+        printfn "other"
 [<EntryPoint>]
 let main argv =
     // introduce()
@@ -82,8 +116,7 @@ let main argv =
     |> String.collect(fun c -> sprintf "%c, " c) 
     |> printfn "%s"
     // string_stuff()
-    printfn "is uppercase %b" (String.exists(fun c -> Char.IsUpper(c)) "Thisis test")
-    printfn "is uppercase %b" (String.exists(fun c -> Char.IsUpper(c)) "thisis test")
-
+    // loop_stuff()
+    conditional_stuff()
     Console.ReadKey() |> ignore
     0 // return an integer exit code
