@@ -114,6 +114,16 @@ let list_staff() =
     printfn "list3 %A" list3
     let list4 = ['a'..'z']
     printfn "list4 %A" list4
+    let list5 = List.init 5 (fun i -> i * 2)
+    printfn "list5 %A" list5
+
+    let list6 = [for i in 1..5 do yield (i * i)]
+    let list7 = [for i in 1..5 do yield! [i .. i + 2]]
+    let list8 = [for i in 1..20 do if (i % 2 = 0) then yield i]
+    printfn "list6 %A" list6
+    printfn "list7 %A" list7
+    printfn "list8 %A" list8
+
 
 [<EntryPoint>]
 let main argv =
