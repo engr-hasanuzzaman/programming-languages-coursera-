@@ -131,7 +131,20 @@ let list_staff() =
     printfn "only odd is %A" (List.filter(fun e -> e % 2 = 1) [1..20])
     printfn "is empty %b" (list1.IsEmpty)
     printfn "is empty %i" ([1..5].Item(1))
+type emotion =
+    | j = 0
+    | f = 1
+    | a = 2
 
+let enum_stuff() = 
+    let my_f = emotion.j
+    match my_f with
+    | j -> printfn "joy"
+    | f -> printfn "fear"
+    | a -> printfn "anger"
+    | _ -> printfn "do not know"
+
+let option_stuff() =
 
 [<EntryPoint>]
 let main argv =
@@ -154,6 +167,7 @@ let main argv =
     // string_stuff()
     // loop_stuff()
     // conditional_stuff()
-    list_staff()
+    // list_staff()
+    enum_stuff()
     Console.ReadKey() |> ignore
     0 // return an integer exit code
