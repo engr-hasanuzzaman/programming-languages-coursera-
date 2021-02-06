@@ -201,6 +201,11 @@ let map_stuff() =
     printfn "map is %A" c2
     printfn "%i" c2.["sumon"]
     // printfn "the samle "
+let add_stuff<'T> x y =
+    x + y
+let generic_stuff() =
+    // printfn "sumo of 2.3 and 1.2 is %.2f" (add_stuff<float> 2.3 1.2)
+    printfn "sumo of 2 and 1 is %i" (add_stuff<int> 2 1)
 
 [<EntryPoint>]
 let main argv =
@@ -229,6 +234,7 @@ let main argv =
     // tuple_stuff()
     // record_stuff()
     // seq_stuff()
-    map_stuff()
+    // map_stuff()
+    generic_stuff()
     Console.ReadKey() |> ignore
     0 // return an integer exit code
