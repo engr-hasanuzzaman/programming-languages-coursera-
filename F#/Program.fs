@@ -169,6 +169,20 @@ type Customer =
 let record_stuff() = 
     let bob: Customer = {name = "bob";  balance = 234.0}
     printfn "bob is %A" bob
+
+let seq_stuff() = 
+    let seq1 = seq { 1 .. 100 }
+    let seq2 = seq { 0 .. 2 .. 50}
+    let seq3 = seq { 50 .. 1}
+    printfn "seq3 is %A" seq3
+    
+    let is_prime n =
+        let rec check i =
+            i >= n / 2 || ( n % i <> 0 && check(i + 1))
+        check 2
+    printfn "5 is prime %b" (is_prime 5)
+    seq { for i in 1..500 do if (is_prime i) then yield i} |> printfn "%A"
+
 [<EntryPoint>]
 let main argv =
     // introduce()
@@ -194,6 +208,7 @@ let main argv =
     // enum_stuff()
     // option_stuff()
     // tuple_stuff()
-    record_stuff()
+    // record_stuff()
+    seq_stuff()
     Console.ReadKey() |> ignore
     0 // return an integer exit code
